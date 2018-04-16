@@ -8,3 +8,21 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}

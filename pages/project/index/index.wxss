@@ -1,8 +1,25 @@
 #projectList {
-  align-items: flex-start;
+  padding-top: 30rpx;
+  align-items: baseline;
   background: orange;
 }
 
 .project {
-	height: 136rpx;
+  padding: 0 0 0 30rpx;
+  background-color: blue;
+  margin-bottom: 30rpx;
+}
+
+.projectName {
+  height: 136rpx;
+  line-height: 136rpx;
+  float: left;
+}
+
+.projectPic {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 1rpx;
+  margin-right: 40rpx;
+  float: left;
 }

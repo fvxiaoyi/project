@@ -1,5 +1,6 @@
 <view id="projectList" class="container">
-	<view class="project" wx:for="{{list}}" >
-    <text>{{item.name}}</text>
+	<view class="project clear" wx:for="{{list}}" >
+    <image class="projectPic" src="{{item.picture}}"></image>
+    <view class="projectName">{{item.name}}</view>
   </view>
 </view>
