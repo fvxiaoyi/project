@@ -1,0 +1,5 @@
+<view id="projectList" class="container">
+	<view class="project" wx:for="{{list}}" >
+    <text>{{item.name}}</text>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+#projectList {
+  align-items: flex-start;
+  background: orange;
+}
+
+.project {
+	height: 136rpx;
+}
