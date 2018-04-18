@@ -1,0 +1,50 @@
+#addTask {
+  padding: 30rpx;
+}
+
+#addTask .taskBaseInfoWrap {
+  padding: 0 30rpx 30rpx 30rpx;
+}
+
+#addTask .name {
+  font-size: 70rpx;
+  height: 70rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #CACACA;
+}
+
+#addTask .cell {
+  display: flex;
+  margin-top: 40rpx;
+  color: #888888;
+}
+
+#addTask .priorityIcon {
+  border: 2px solid;
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+#addTask .normalColor {
+  border-color: #CACACA;
+}
+
+#addTask .urgentColor {
+  border-color: #F7A740;
+}
+
+#addTask .veryUrgentColor {
+  border-color: #ED6464;
+}
+
+#addTask .iconfont {
+  font-size: 48rpx;
+  margin-right: 30rpx;
+}
+
+#addTask .submit {
+  background-color: #3CA8F6;
+  margin-top: 40rpx;
+}

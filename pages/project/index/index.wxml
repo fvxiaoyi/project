@@ -1,6 +1,16 @@
 <view id="projectList" class="container">
-	<view class="project clear" wx:for="{{list}}" >
+  <text class="title">我的项目 · {{list.length}}</text>
+	<view class="project" wx:for="{{list}}" wx:key="id" bindtap="handleViewDetail" >
     <image class="projectPic" src="{{item.picture}}"></image>
-    <view class="projectName">{{item.name}}</view>
+    <text class="projectName">{{item.name}}</text>
+  </view>
+  <view class="add">
+    <text class="btn">+</text>
+    <text class="projectName">创建项目</text>
+  </view>
+  <text class="title">项目回收站</text>
+  <view class="archive">
+    <text class="btn iconfont icon-delete"></text>
+    <text class="projectName">查看回收站项目</text>
   </view>
 </view>

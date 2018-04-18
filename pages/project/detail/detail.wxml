@@ -1,0 +1,21 @@
+<view id="projectDetail">
+  <view class="tbar">
+    <text class="projectName">{{model.name}}</text>
+    <text style="flex:1;"></text>
+    <text class="add iconfont icon-add" bindtap="handleAddTask"></text>
+  </view>
+  <view class="fbar">
+    <text data-num="1" class="btn {{filterType == 1 ? 'active' : ''}}" bindtap="fbarChange">待执行</text>
+    <text data-num="3" class="btn {{filterType == 3 ? 'active' : ''}}" bindtap="fbarChange">全部</text>
+    <text data-num="2" class="btn {{filterType == 2 ? 'active' : ''}}" bindtap="fbarChange">已完成</text>
+  </view>
+  <view class="contentWrap">
+    <view class="task" wx:for="{{model.tasks}}" wx:key="id">
+      <view class="baseInfo">
+        <checkbox checked="{{item.status}}"/>
+        <text class="name">{{item.name}}</text>
+      </view>
+      <view wx:if="{{item.discard}}" class="discard">任务过期</view>
+    </view>
+  </view>
+</view>

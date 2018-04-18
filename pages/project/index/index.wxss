@@ -1,25 +1,46 @@
 #projectList {
-  padding-top: 30rpx;
+  padding: 30rpx 0 0 30rpx;
   align-items: baseline;
-  background: orange;
 }
 
-.project {
-  padding: 0 0 0 30rpx;
-  background-color: blue;
+#projectList .title {
+  color: #848484;
+  font-size: 34rpx;
   margin-bottom: 30rpx;
 }
 
-.projectName {
-  height: 136rpx;
-  line-height: 136rpx;
-  float: left;
+#projectList .project, #projectList .add, #projectList .archive {
+  display: flex;
+  padding-left: 20rpx;
+  margin-bottom: 30rpx;
+  width: 100%;
 }
 
-.projectPic {
+#projectList .projectName, #projectList .add .projectName, #projectList .archive .projectName {
+  font-size: 30rpx;
+  color: #848484;
+  height: 136rpx;
+  line-height: 136rpx;
+}
+
+#projectList .projectPic, #projectList .add .btn, #projectList .archive .btn {
   width: 136rpx;
   height: 136rpx;
-  border-radius: 1rpx;
+  border-radius: 6px;
   margin-right: 40rpx;
-  float: left;
+}
+
+#projectList .add .btn {
+  text-align: center;
+  line-height: 136rpx;
+  color: #888888;
+  font-size: 50rpx;
+  background-color: #f0f0f0;
+}
+
+#projectList .archive .btn {
+  text-align: center;
+  line-height: 136rpx;
+  color: #888888;
+  font-size: 40rpx;
 }

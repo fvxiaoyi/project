@@ -1,0 +1,59 @@
+<view id="addTask">
+    <input placeholder="任务标题" class="name" />
+    <view class="taskBaseInfoWrap">
+      <picker bindchange="priorityChange" value="{{model.priority}}" range="{{priority}}">
+        <view class="cell">
+          <view class="priorityIcon {{model.priority == 0 ? 'normalColor' : model.priority == 1 ? 'urgentColor' : 'veryUrgentColor'}}"></view>
+          <text>{{priority[model.priority]}}</text>
+          <view></view>
+        </view>
+      </picker>
+
+      <picker bindchange="remindTypeChange" value="{{model.remindType}}" range="{{remindType}}">
+        <view class="cell">
+          <text class="iconfont icon-301"></text>
+          <text wx:if="{{model.remindType}}">{{remindType[model.remindType]}}</text>
+          <text wx:else>设置提醒周期</text>
+        </view>
+      </picker>
+
+      <picker wx:if="{{model.remindType && model.remindType == 0}}" mode="date" start="{{currentPickerDate}}" bindchange="remindDateChange">
+        <view class="cell">
+          <text class="iconfont icon-yanchurili"></text>
+          <text wx:if="{{model.remindDate}}">{{model.remindDate}}</text>
+          <text wx:else>设置提醒日期</text>
+        </view>
+      </picker>
+
+      <picker mode="time" start="00:00" end="23:59" bindchange="remindTimeChange">
+        <view class="cell">
+          <text class="iconfont icon-naozhong"></text>
+          <text wx:if="{{model.remindTime}}">{{model.remindTime}}</text>
+          <text wx:else>设置提醒时间</text>
+        </view>
+      </picker>
+
+      <picker mode="date" start="{{currentPickerDate}}" bindchange="dueDateChange">
+        <view class="cell">
+          <text class="iconfont icon-yanchurili"></text>
+          <text wx:if="{{model.dueDate}}">{{model.dueDate}}</text>
+          <text wx:else>设置截至日期</text>
+        </view>
+      </picker>
+
+      <picker mode="time" start="00:00" end="23:59" bindchange="dueTimeChange">
+        <view class="cell">
+          <text class="iconfont icon-naozhong"></text>
+          <text wx:if="{{model.dueTime}}">{{model.dueTime}}</text>
+          <text wx:else>设置截至时间</text>
+        </view>
+      </picker>
+
+      <view class="cell">
+        <text class="iconfont icon-text"></text>
+        <textarea placeholder="备注" auto-height />
+      </view>
+
+      <button type="primary" bindtap="submit" class="submit"> 完成 </button>
+    </view>
+</view>

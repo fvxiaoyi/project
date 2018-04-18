@@ -1,14 +1,15 @@
 {
   "pages":[
     "pages/project/index/index",
+    "pages/project/addTask/addTask",
+    "pages/project/detail/detail",
     "pages/index/index",
     "pages/logs/logs"
     
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#3CA8F6",
+    "navigationBarTitleText": "WeChat"
   }
 }
