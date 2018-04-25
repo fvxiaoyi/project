@@ -1,10 +1,10 @@
 <view id="projectList" class="container">
   <text class="title">我的项目 · {{list.length}}</text>
-	<view class="project" wx:for="{{list}}" wx:key="id" bindtap="handleViewDetail" >
-    <image class="projectPic" src="{{item.picture}}"></image>
+	<view class="project" wx:for="{{list}}" wx:key="_id" data-id="{{item._id}}" bindtap="handleViewDetail" >
+    <view class="projectPic" ></view>
     <text class="projectName">{{item.name}}</text>
   </view>
-  <view class="add">
+  <view class="add" bindtap="handleAddProject" >
     <text class="btn">+</text>
     <text class="projectName">创建项目</text>
   </view>

@@ -1,5 +1,5 @@
 <view id="addTask">
-    <input placeholder="任务标题" class="name" />
+    <input placeholder="任务标题" class="name" auto-focus bindinput="bindNameInput" />
     <view class="taskBaseInfoWrap">
       <picker bindchange="priorityChange" value="{{model.priority}}" range="{{priority}}">
         <view class="cell">
@@ -51,7 +51,7 @@
 
       <view class="cell">
         <text class="iconfont icon-text"></text>
-        <textarea placeholder="备注" auto-height />
+        <textarea placeholder="备注" auto-height bindinput="bindRemarkTextArea" />
       </view>
 
       <button type="primary" bindtap="submit" class="submit"> 完成 </button>

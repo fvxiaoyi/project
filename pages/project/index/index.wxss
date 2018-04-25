@@ -13,7 +13,7 @@
   display: flex;
   padding-left: 20rpx;
   margin-bottom: 30rpx;
-  width: 100%;
+  width: 80%;
 }
 
 #projectList .projectName, #projectList .add .projectName, #projectList .archive .projectName {
@@ -28,6 +28,13 @@
   height: 136rpx;
   border-radius: 6px;
   margin-right: 40rpx;
+}
+
+.projectPic {
+  background-image: url('https://mailimg.teambition.com/logos/cover-demo.jpg');
+  background-size: 408rpx 136rpx;
+  background-repeat:no-repeat;
+  background-position: center;
 }
 
 #projectList .add .btn {

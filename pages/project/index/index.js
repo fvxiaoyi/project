@@ -1,22 +1,41 @@
 Page({
   data: {
-    list: [{
-      id: '1',
-      name: '任务名字1',
-      picture: 'https://mailimg.teambition.com/logos/cover-media.jpg'
-    }, {
-      id: '2',
-      name: '任务名字2',
-      picture: 'https://mailimg.teambition.com/logos/cover-media.jpg'
-    }, {
-      id: '3',
-      name: '任务名字3',
-      picture: 'https://mailimg.teambition.com/logos/cover-media.jpg'
-    }]
+    list: []
   },
-  handleViewDetail() {
+  handleViewDetail(e) {
     wx.navigateTo({
-      url: '../detail/detail?id=1'
+      url: `../detail/detail?id=${e.currentTarget.dataset.id}`
+    })
+  },
+  handleAddProject() {
+    wx.navigateTo({
+      url: '../addProject/addProject'
+    })
+  },
+  onLoad: function (options) {
+    let me = this;
+    wx.showLoading({
+      title: '加载中'
+    })
+    wx.request({
+      url: 'https://suyibin.cn/project/query',
+      method: 'POST',
+      data: {
+        ownerId: wx.getStorageSync('openId')
+      },
+      success(res) {
+        wx.hideLoading()
+        if (res.statusCode === 200) {
+          if (res.data.success) {
+            me.setData({
+              list: res.data.data
+            })
+          }
+        } else {
+          
+        }
+        
+      }
     })
   }
 })

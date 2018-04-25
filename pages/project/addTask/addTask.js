@@ -10,13 +10,28 @@ Page({
     priority: ['普通', '紧急', '非常紧急'],
     remindType: ['一次', '每日', '每周', '每月'],
     model: {
+      name: '',
+      project: null,
       priority: 0,
       remindType: null,
       remindDate: null,
       remindTime: null,
       dueDate: null,
-      dueTime: null
+      dueTime: null,
+      remark: ''
     }
+  },
+
+  bindNameInput(e) {
+    this.setData({
+      ['model.name']: e.detail.value
+    })
+  },
+
+  bindRemarkTextArea(e) {
+    this.setData({
+      ['model.remark']: e.detail.value
+    })
   },
 
   priorityChange(e) {
@@ -60,16 +75,49 @@ Page({
   },
 
   submit() {
-    console.log(this.data.model)
-    wx.redirectTo({
-      url: '../detail/detail?id=1'
+    let me = this
+    //FIXME check model
+    wx.showLoading({
+      title: '加载中'
     })
+    wx.request({
+      url: 'https://suyibin.cn/project/addTask',
+      method: 'POST',
+      data: this.data.model,
+      success: function (res) {
+        wx.hideLoading()
+        if (res.statusCode === 200) {
+          if (res.data.success) {
+            wx.showToast({
+              title: '成功',
+              icon: 'success',
+              success() {
+                wx.redirectTo({
+                  url: `../detail/detail?id=${me.data.model.project}`
+                })
+              }
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+        } else {
+          
+        }
+      }
+    })
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      ['model.project']: options.id
+    })
   },
 
   /**

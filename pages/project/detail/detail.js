@@ -29,15 +29,38 @@ Page({
     })
   },
   handleAddTask: function(e) {
-    wx.redirectTo({
-      url: '../addTask/addTask'
+    wx.navigateTo({
+      url: `../addTask/addTask?id=${this.data.model._id}`
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let me = this;
+    wx.showLoading({
+      title: '加载中'
+    })
+    wx.request({
+      url: `https://suyibin.cn/project/get/${options.id}`,
+      method: 'POST',
+      success: function (res) {
+        wx.hideLoading()
+        if (res.statusCode === 200) {
+          if (res.data.success) {
+            me.setData({
+              model: res.data.data
+            })
+          } else {
+            wx.redirectTo({
+              url: '../index/index'
+            })
+          }
+        } else {
+
+        }
+      }
+    })
   },
 
   /**

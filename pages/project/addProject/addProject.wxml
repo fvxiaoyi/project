@@ -1,0 +1,4 @@
+<view id="addProject" >
+  <input placeholder="项目名称" class="name" auto-focus bindinput="bindNameInput" />
+  <button type="primary" bindtap="submit" class="submit"> 完成 </button>
+</view>

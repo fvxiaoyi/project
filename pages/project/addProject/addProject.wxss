@@ -1,0 +1,7 @@
+#addProject {
+  padding: 50rpx 30rpx;
+}
+
+#addProject .name {
+  margin-bottom: 50rpx;
+}
